@@ -1,12 +1,10 @@
 <html>
 <body>
-<h1><font color='red'> Welcome to Ashok IT - Software Training Institute <font></h1>
+  <h2>Hi Aman , This message is From Mayur Soni</h2> 
+<h1><font color='red'> Hope you are doing well <font></h1>
 
-<a href="www.ashokit.in">Click Here To See Ashok IT Training Schedules</a>
   
-  <h2> Call Us : +91-9985396677  </h2> 
-  
-  <h3> Our Ofc Location : Ameerpet, Hyderbad </h3>
+  <h3> Just wanted to say a big thank you for always being there for me — for your constant support, motivation, and helpfulness whenever I need it, no matter what. Having a friend like you genuinely means a lot. Grateful to have you by my side. 🙌🙏</h3>
 
 </body>
 </html>
