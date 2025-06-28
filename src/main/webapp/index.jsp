@@ -3,70 +3,81 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to My App</title>
+    <title>Welcome - JSP Web App</title>
     <style>
         body {
-            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            color: white;
             overflow: hidden;
         }
 
-        .welcome-container {
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 50px;
             text-align: center;
-            animation: fadeIn 2s ease-in-out;
+            color: #fff;
+            animation: slideUp 1.5s ease-out;
         }
 
         h1 {
             font-size: 3em;
             margin-bottom: 20px;
-            animation: pulse 2s infinite;
+            background: linear-gradient(to right, #f12711, #f5af19);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s infinite alternate;
         }
 
         p {
             font-size: 1.2em;
-            margin-top: 10px;
-            opacity: 0.8;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            opacity: 0.9;
         }
 
         .button {
             display: inline-block;
-            padding: 10px 20px;
             margin-top: 30px;
-            background-color: #00bcd4;
+            padding: 12px 28px;
+            background: #ff4b2b;
             color: white;
-            border: none;
-            border-radius: 25px;
             font-size: 1em;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 0 10px #ff4b2b, 0 0 20px #ff416c;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: transform 0.2s ease-in-out;
         }
 
         .button:hover {
-            background-color: #0097a7;
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #ff4b2b, 0 0 25px #ff416c;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #f12711, 0 0 10px #f5af19; }
+            to { text-shadow: 0 0 20px #f12711, 0 0 30px #f5af19; }
         }
     </style>
 </head>
 <body>
-    <div class="welcome-container">
-        <h1>🚀 Welcome to My JSP App!</h1>
-        <p>Your Tomcat server is running successfully.</p>
-        <a href="https://tomcat.apache.org" target="_blank" class="button">Learn More</a>
+    <div class="glass-card">
+        <h1>Welcome to Your JSP App 🚀</h1>
+        <p>Tomcat is running successfully, and you're ready to build something amazing.</p>
+        <a href="https://tomcat.apache.org" class="button" target="_blank">Explore Tomcat Docs</a>
     </div>
 </body>
 </html>
