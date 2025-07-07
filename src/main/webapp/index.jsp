@@ -1,83 +1,70 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page import="java.util.Date" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome - JSP Web App</title>
+    <title>Dynamic JSP Page</title>
     <style>
         body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1f1c2c, #928DAB);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 30px;
         }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            padding: 50px;
-            text-align: center;
-            color: #fff;
-            animation: slideUp 1.5s ease-out;
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px #ccc;
         }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #f12711, #f5af19);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: glow 2s infinite alternate;
+        h2 {
+            color: #333;
         }
-
-        p {
-            font-size: 1.2em;
-            opacity: 0.9;
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 28px;
-            background: #ff4b2b;
+        input[type="submit"] {
+            background: #4CAF50;
             color: white;
-            font-size: 1em;
+            padding: 10px 20px;
             border: none;
-            border-radius: 30px;
-            box-shadow: 0 0 10px #ff4b2b, 0 0 20px #ff416c;
+            border-radius: 5px;
             cursor: pointer;
-            transition: transform 0.2s ease-in-out;
         }
-
-        .button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px #ff4b2b, 0 0 25px #ff416c;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(40px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #f12711, 0 0 10px #f5af19; }
-            to { text-shadow: 0 0 20px #f12711, 0 0 30px #f5af19; }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e7f3fe;
+            border-left: 5px solid #2196F3;
         }
     </style>
 </head>
 <body>
-    <div class="glass-card">
-        <h1>Welcome to Your JSP App 🚀</h1>
-        <p>Tomcat is running successfully, and you're ready to build something amazing.</p>
-        <a href="https://tomcat.apache.org" class="button" target="_blank">Explore Tomcat Docs</a>
+    <div class="container">
+        <h2>Welcome to My JSP Page</h2>
+        <p>Today's date: <%= new Date() %></p>
+
+        <form method="post">
+            <label>Enter your name:</label>
+            <input type="text" name="username" placeholder="e.g., Aman">
+            <input type="submit" value="Submit">
+        </form>
+
+        <%
+            String username = request.getParameter("username");
+            if (username != null && !username.trim().isEmpty()) {
+        %>
+            <div class="result">
+                Hello, <strong><%= username %></strong>! Welcome to the dynamic JSP world 🌐
+            </div>
+        <%
+            }
+        %>
     </div>
 </body>
 </html>
